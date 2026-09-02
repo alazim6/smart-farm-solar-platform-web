@@ -1,0 +1,1545 @@
+
+1 new activity
+3 chats with new messages
+New missed calls
+Has context menu
+Chat
+
+
+
+
+Unread
+Chats
+Unmuted
+Meeting chats
+Unread messageLast messageGroup chatMeeting chatChatPersonal at mentionEveryone at mentionImportantUrgentDraftDraftMutedMeeting in progressMeet now in progressYou can't send messages because you are not a member of the chat.You cannot send messages to this botPrivateSharedHas context menuChannel at mentionTeam at mentionPersonal at mentionUnreadUnreadMeeting in progressUnreadChannelTeamHas pinned messagesSee moreCommunityTemporarily shownHas context menuBadged chatBadged chats
+Has context menu
+
+Web Tech
+
+
+Chat
+
+Shared
+
+Notes
+
+Recap
+
+Has context menu
+
+Meet now
+
+
+3
+
+
+
+
+This message has been deleted.
+
+Message List
+Tomader class koytai? by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+5:36 AM
+
+Tomader class koytai?
+
+Atleast Kew response koro by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+8:21 AM
+
+Atleast Kew response koro
+
+class toh akn tmi tmr part ta push korer tr... by AL AZIM BARI
+AL AZIM BARI
+9:12 AM
+
+class toh akn tmi tmr part ta push korer try koro error ta toh gpt dia solve houer kotha kawmin r comit hoise toh kal rat e
+Vai hoitese nah by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+9:12 AM
+
+Vai hoitese nah
+
+Amr code full ready just push kora baki by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+9:12 AM
+
+Amr code full ready just push kora baki
+
+But jvabe e kore error dekhaitese by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+9:13 AM
+
+But jvabe e kore error dekhaitese
+
+tmi koi by AL AZIM BARI
+AL AZIM BARI
+9:55 AM
+
+tmi koi
+ajk sir r kache jaia time barai chai ? chol... by AL AZIM BARI
+AL AZIM BARI
+9:56 AM
+
+ajk sir r kache jaia time barai chai ? cholo dekhi sir e dei ki na
+9 a by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+9:59 AM
+
+9 a
+
+Apnara kothay? by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+9:59 AM
+
+Apnara kothay?
+
+Call missed
+Class ses a 9 r akne asen by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+10:04 AM
+
+Class ses a 9 r akne asen
+
+annex 9 by AL AZIM BARI
+AL AZIM BARI
+10:10 AM
+
+annex 9
+2 ta asen by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+10:11 AM
+
+2 ta asen
+
+Begin quote, JAKIYA SULTANA MEDULI, 9/2/202... by AL AZIM BARI
+AL AZIM BARI
+10:24 AM
+
+JAKIYA SULTANA MEDULI
+9/2/2026 10:11 AM
+2 ta asen
+koi?
+Sir r room r baire by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+10:25 AM
+
+Sir r room r baire
+
+Link https://github.com/alazim6/smart-farm-... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+10:42 AM
+
+https://github.com/alazim6/smart-farm-solar-platform-web
+
+Url Preview for GitHub - alazim6/smart-farm-solar-platform-web: Web-based implementation of a smart farm solar energy monitoring, management, and grid integration platform.
+GitHub - alazim6/smart-farm-solar-platform-web: Web-based implementation of a smart farm solar energy monitoring, management, and grid integration platform.
+Web-based implementation of a smart farm solar energy monitoring, management, and grid integration platform. - alazim6/smart-farm-solar-platform-web
+
+github.com
+C:\Users\User\OneDrive\Desktop\smart farm by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:26 PM
+
+C:\Users\User\OneDrive\Desktop\smart farm
+
+<?php   require_once "database.php";   clas... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:30 PM
+
+<?php
+
+ 
+
+require_once "database.php";
+
+ 
+
+class GridModel
+
+{
+
+ 
+
+    public function getFarms()
+
+    {
+
+        global $conn;
+
+ 
+
+        $sql = "SELECT * FROM farms";
+
+ 
+
+        $result = mysqli_query($conn, $sql);
+
+ 
+
+        $farms = array();
+
+ 
+
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            $farms[] = $row;
+
+        }
+
+ 
+
+        return $farms;
+
+    }
+
+ 
+
+ 
+
+    public function getRequests()
+
+    {
+
+        global $conn;
+
+ 
+
+        $sql = "SELECT * FROM connection_requests
+
+                WHERE status = 'Pending'";
+
+ 
+
+        $result = mysqli_query($conn, $sql);
+
+ 
+
+        $requests = array();
+
+ 
+
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            $requests[] = $row;
+
+        }
+
+ 
+
+        return $requests;
+
+    }
+
+ 
+
+ 
+
+    public function getEnergy()
+
+    {
+
+        global $conn;
+
+ 
+
+        $sql = "SELECT * FROM energy_data
+
+                ORDER BY id DESC
+
+                LIMIT 1";
+
+ 
+
+        $result = mysqli_query($conn, $sql);
+
+ 
+
+        return mysqli_fetch_assoc($result);
+
+    }
+
+ 
+
+ 
+
+    public function acceptRequest($id)
+
+    {
+
+        global $conn;
+
+ 
+
+     
+
+ 
+
+        $sql = "SELECT * FROM connection_requests
+
+                WHERE id = $id";
+
+ 
+
+        $result = mysqli_query($conn, $sql);
+
+ 
+
+        $request = mysqli_fetch_assoc($result);
+
+ 
+
+ 
+
+        if ($request) {
+
+ 
+
+            $name = $request["farm_name"];
+
+            $location = $request["location"];
+
+ 
+
+ 
+
+           
+
+ 
+
+            $sql = "INSERT INTO farms
+
+                    (name, location, status)
+
+                    VALUES
+
+                    ('$name', '$location', 'Connected')";
+
+ 
+
+            mysqli_query($conn, $sql);
+
+ 
+
+ 
+
+       
+
+ 
+
+            $sql = "UPDATE connection_requests
+
+                    SET status = 'Accepted'
+
+                    WHERE id = $id";
+
+ 
+
+            mysqli_query($conn, $sql);
+
+        }
+
+    }
+
+ 
+
+ 
+
+    public function rejectRequest($id)
+
+    {
+
+        global $conn;
+
+ 
+
+        $sql = "UPDATE connection_requests
+
+                SET status = 'Rejected'
+
+                WHERE id = $id";
+
+ 
+
+        mysqli_query($conn, $sql);
+
+    }
+
+}
+
+ 
+
+?>
+
+gridmodel.php by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:30 PM
+
+gridmodel.php
+
+?php   require_once "GridModel.php";   clas... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:31 PM
+
+?php
+
+ 
+
+require_once "GridModel.php";
+
+ 
+
+class GridController
+
+{
+
+ 
+
+    public function dashboard()
+
+    {
+
+        $model = new GridModel();
+
+ 
+
+        $farms = $model->getFarms();
+
+ 
+
+        $requests = $model->getRequests();
+
+ 
+
+        include "views/dashboard.php";
+
+    }
+
+ 
+
+ 
+
+    public function energy()
+
+    {
+
+        $model = new GridModel();
+
+ 
+
+        $energy = $model->getEnergy();
+
+ 
+
+ 
+
+        $netFlow =
+
+            $energy["total_received"]
+
+            -
+
+            $energy["total_distributed"];
+
+ 
+
+ 
+
+        if ($energy["grid_load"] >= 80) {
+
+ 
+
+            $status = "High Load";
+
+ 
+
+        }
+
+        else if ($energy["grid_load"] >= 60) {
+
+ 
+
+            $status = "Stable";
+
+ 
+
+        }
+
+        else {
+
+ 
+
+            $status = "Low Load";
+
+        }
+
+ 
+
+ 
+
+        include "views/energy.php";
+
+    }
+
+ 
+
+ 
+
+    public function accept()
+
+    {
+
+        $model = new GridModel();
+
+ 
+
+        if (isset($_GET["id"])) {
+
+ 
+
+            $id = $_GET["id"];
+
+ 
+
+            $model->acceptRequest($id);
+
+        }
+
+ 
+
+        header("Location: index.php");
+
+    }
+
+ 
+
+ 
+
+    public function reject()
+
+    {
+
+        $model = new GridModel();
+
+ 
+
+        if (isset($_GET["id"])) {
+
+ 
+
+            $id = $_GET["id"];
+
+ 
+
+            $model->rejectRequest($id);
+
+        }
+
+ 
+
+        header("Location: index.php");
+
+    }
+
+}
+
+ 
+
+?>
+
+gridcontroller.php by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:31 PM
+
+gridcontroller.php
+
+<!DOCTYPE html>   <html>   <head>       <ti... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:31 PM
+
+<!DOCTYPE html>
+
+ 
+
+<html>
+
+ 
+
+<head>
+
+ 
+
+    <title>Grid Operator Dashboard</title>
+
+ 
+
+    <link rel="stylesheet" href="css/style.css">
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+<div class="main">
+
+ 
+
+    <h1>Grid Operator Dashboard</h1>
+
+ 
+
+ 
+
+    <div class="dashboard">
+
+ 
+
+ 
+
+        <!-- Connected Farms -->
+
+ 
+
+        <div class="box">
+
+ 
+
+            <h2>Connected Farms</h2>
+
+ 
+
+            <table>
+
+ 
+
+                <tr>
+
+ 
+
+                    <th>Name</th>
+
+                    <th>Location</th>
+
+                    <th>Status</th>
+
+ 
+
+                </tr>
+
+ 
+
+ 
+
+                <?php foreach ($farms as $farm) { ?>
+
+ 
+
+                <tr>
+
+ 
+
+                    <td>
+
+                        <?php echo $farm["name"]; ?>
+
+                    </td>
+
+ 
+
+                    <td>
+
+                        <?php echo $farm["location"]; ?>
+
+                    </td>
+
+ 
+
+                    <td>
+
+ 
+
+                        <?php
+
+ 
+
+                        if ($farm["status"] == "Connected") {
+
+ 
+
+                            echo "<span class='connected'>Connected</span>";
+
+ 
+
+                        }
+
+                        else {
+
+ 
+
+                            echo "<span class='disconnected'>Disconnected</span>";
+
+ 
+
+                        }
+
+ 
+
+                        ?>
+
+ 
+
+                    </td>
+
+ 
+
+                </tr>
+
+ 
+
+                <?php } ?>
+
+ 
+
+            </table>
+
+ 
+
+        </div>
+
+ 
+
+ 
+
+ 
+
+        <!-- Connection Requests -->
+
+ 
+
+        <div class="box">
+
+ 
+
+            <h2>
+
+                Approve Grid
+
+                <br>
+
+                Connection Requests
+
+            </h2>
+
+ 
+
+ 
+
+            <?php foreach ($requests as $request) { ?>
+
+ 
+
+            <div class="request">
+
+ 
+
+                <b>
+
+                    <?php echo $request["farm_name"]; ?>
+
+                </b>
+
+ 
+
+                <br>
+
+ 
+
+                <?php echo $request["location"]; ?>
+
+ 
+
+                <br><br>
+
+ 
+
+ 
+
+                <a
+
+                    class="accept"
+
+                    href="index.php?page=accept&id=<?php echo $request["id"]; ?>"
+
+                >
+
+                    Accepted
+
+                </a>
+
+ 
+
+ 
+
+                <a
+
+                    class="reject"
+
+                    href="index.php?page=reject&id=<?php echo $request["id"]; ?>"
+
+                >
+
+                    Reject
+
+                </a>
+
+ 
+
+            </div>
+
+ 
+
+            <?php } ?>
+
+ 
+
+ 
+
+            <?php
+
+ 
+
+            if (count($requests) == 0) {
+
+ 
+
+                echo "<p>No new requests.</p>";
+
+ 
+
+            }
+
+ 
+
+            ?>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <div class="bottom">
+
+ 
+
+        <a href="index.php?page=energy">
+
+ 
+
+            Energy Transfer & Grid Load
+
+ 
+
+        </a>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+
+</body>
+
+ 
+
+</html>
+
+dashboard.php by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:31 PM
+
+dashboard.php
+
+<!DOCTYPE html>   <html>   <head>       <ti... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:32 PM
+
+<!DOCTYPE html>
+
+ 
+
+<html>
+
+ 
+
+<head>
+
+ 
+
+    <title>Energy Transfer</title>
+
+ 
+
+    <link rel="stylesheet" href="css/style.css">
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+<div class="main">
+
+ 
+
+    <h1>
+
+        Energy Transfer & Grid Load Management
+
+    </h1>
+
+ 
+
+ 
+
+    <div class="energy">
+
+ 
+
+ 
+
+        <div class="energy-left">
+
+ 
+
+ 
+
+            <div class="energy-box">
+
+ 
+
+                <h3>Total Received</h3>
+
+ 
+
+                <p>
+
+                    <?php echo $energy["total_received"]; ?> kWh
+
+                </p>
+
+ 
+
+            </div>
+
+ 
+
+ 
+
+            <div class="energy-box">
+
+ 
+
+                <h3>Total Distributed</h3>
+
+ 
+
+                <p>
+
+                    <?php echo $energy["total_distributed"]; ?> kWh
+
+                </p>
+
+ 
+
+            </div>
+
+ 
+
+ 
+
+            <div class="energy-box">
+
+ 
+
+                <h3>Net Flow</h3>
+
+ 
+
+                <p>
+
+                    <?php echo $netFlow; ?> kWh
+
+                </p>
+
+ 
+
+            </div>
+
+ 
+
+ 
+
+        </div>
+
+ 
+
+ 
+
+        <div class="energy-right">
+
+ 
+
+ 
+
+            <div class="circle">
+
+ 
+
+                <b>
+
+                    <?php echo $energy["grid_load"]; ?>%
+
+                </b>
+
+ 
+
+                <span>
+
+                    grid load
+
+                </span>
+
+ 
+
+            </div>
+
+ 
+
+ 
+
+            <div class="status">
+
+ 
+
+                Grid Status :
+
+                <?php echo $status; ?>
+
+ 
+
+            </div>
+
+ 
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+    <div class="bottom">
+
+ 
+
+        <a href="index.php">
+
+ 
+
+            ← Back to Dashboard
+
+ 
+
+        </a>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+
+</body>
+
+ 
+
+</html>
+
+energy.php by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:32 PM
+
+energy.php
+
+body {     font-family: Arial;     backgrou... by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:33 PM
+
+body
+
+{
+
+    font-family: Arial;
+
+    background-color: #f5f5f5;
+
+    margin: 0;
+
+}
+
+ 
+
+.main
+
+{
+
+    width: 90%;
+
+    margin: 40px auto;
+
+}
+
+ 
+
+h1
+
+{
+
+    text-align: center;
+
+    font-size: 34px;
+
+    margin-bottom: 50px;
+
+}
+
+ 
+
+h2
+
+{
+
+    font-size: 25px;
+
+}
+
+ 
+
+ 
+
+.dashboard
+
+{
+
+    display: flex;
+
+    gap: 60px;
+
+}
+
+ 
+
+.box
+
+{
+
+    width: 50%;
+
+}
+
+ 
+
+ 
+
+table
+
+{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: #d4e6e5;
+
+}
+
+ 
+
+th
+
+{
+
+    padding: 14px;
+
+}
+
+ 
+
+td
+
+{
+
+    padding: 12px;
+
+    text-align: center;
+
+    border-top: 1px solid gray;
+
+}
+
+ 
+
+ 
+
+.connected
+
+{
+
+    color: green;
+
+}
+
+ 
+
+.disconnected
+
+{
+
+    color: red;
+
+}
+
+ 
+
+ 
+
+.request
+
+{
+
+    background-color: #d4e6e5;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+ 
+
+ 
+
+.accept,
+
+.reject
+
+{
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    text-decoration: none;
+
+    margin-right: 8px;
+
+}
+
+ 
+
+ 
+
+.accept
+
+{
+
+    background-color: #b5cccc;
+
+    color: black;
+
+}
+
+ 
+
+.reject
+
+{
+
+    background-color: #b5cccc;
+
+    color: black;
+
+}
+
+ 
+
+ 
+
+.energy
+
+{
+
+    display: flex;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+ 
+
+.energy-left
+
+{
+
+    width: 55%;
+
+}
+
+ 
+
+.energy-right
+
+{
+
+    width: 45%;
+
+    text-align: center;
+
+}
+
+ 
+
+ 
+
+.energy-box
+
+{
+
+    background-color: #b7d4d2;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+ 
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+ 
+
+ 
+
+.energy-box h3
+
+{
+
+    margin: 0;
+
+}
+
+ 
+
+.energy-box p
+
+{
+
+    margin: 0;
+
+    font-size: 18px;
+
+}
+
+ 
+
+ 
+
+.circle
+
+{
+
+    width: 190px;
+
+    height: 190px;
+
+ 
+
+    border-radius: 50%;
+
+ 
+
+    background-color: #9bc7c4;
+
+ 
+
+    margin: auto;
+
+ 
+
+    display: flex;
+
+    flex-direction: column;
+
+ 
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+ 
+
+.circle b
+
+{
+
+    font-size: 28px;
+
+}
+
+ 
+
+.circle span
+
+{
+
+    margin-top: 8px;
+
+}
+
+ 
+
+ 
+
+.status
+
+{
+
+    background-color: #b7d4d2;
+
+    padding: 10px;
+
+    margin: 25px auto;
+
+    width: 200px;
+
+}
+
+ 
+
+ 
+
+.bottom
+
+{
+
+    text-align: right;
+
+    margin-top: 35px;
+
+}
+
+ 
+
+.bottom a
+
+{
+
+    background-color: #779e9c;
+
+    color: white;
+
+ 
+
+    padding: 12px 18px;
+
+ 
+
+    text-decoration: none;
+
+}
+
+ 
+
+ 
+
+@media(max-width: 700px)
+
+{
+
+    .dashboard,
+
+    .energy
+
+    {
+
+        display: block;
+
+    }
+
+ 
+
+    .box,
+
+    .energy-left,
+
+    .energy-right
+
+    {
+
+        width: 100%;
+
+        margin-bottom: 30px;
+
+    }
+
+}
+
+style.css by JAKIYA SULTANA MEDULI
+JAKIYA SULTANA MEDULI
+12:33 PM
+
+style.css
+
+Call missed
+has context menu
+
+
