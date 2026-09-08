@@ -1,0 +1,243 @@
+/* =========================
+   LOGIN PAGE DESIGN
+========================= */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Times New Roman", serif;
+}
+
+
+body{
+
+    height:100vh;
+    background:#f8f3e8;
+
+}
+
+
+
+/* MAIN CONTAINER */
+
+.auth-container{
+
+    display:flex;
+    width:100%;
+    height:100vh;
+
+}
+
+
+
+/* LEFT GREEN AREA */
+
+.auth-left{
+
+    width:45%;
+
+    background:#0e4937;
+
+}
+
+
+
+/* RIGHT LOGIN AREA */
+
+.auth-right{
+
+    width:55%;
+
+    background:#f8f3e8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+/* LOGIN BOX */
+
+.auth-box{
+
+    width:300px;
+
+}
+
+
+
+/* TITLE */
+
+.auth-title{
+
+    text-align:center;
+
+    color:#124d3c;
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* INPUT GROUP */
+
+.input-group{
+
+    margin-bottom:15px;
+
+}
+
+
+.input-group label{
+
+    display:block;
+
+    color:#124d3c;
+
+    font-size:16px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.input-group input,
+.input-group select{
+
+
+    width:100%;
+
+    height:32px;
+
+    background:#a7b996;
+
+    border:none;
+
+    border-radius:5px;
+
+    padding:0 10px;
+
+    font-size:14px;
+
+    color:#124d3c;
+
+
+}
+
+
+
+.input-group input::placeholder{
+
+    color:#555;
+
+}
+
+
+
+/* REMEMBER SECTION */
+
+.auth-box > div:nth-last-of-type(2){
+
+    color:#124d3c;
+
+}
+
+
+.auth-box a{
+
+    color:#124d3c;
+
+    text-decoration:none;
+
+}
+
+
+
+.auth-box a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+/* LOGIN BUTTON */
+
+
+.main-btn{
+
+    width:100%;
+
+    height:35px;
+
+    margin-top:20px;
+
+    background:#527464;
+
+    color:white;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+.main-btn:hover{
+
+    background:#124d3c;
+
+}
+
+
+
+/* CREATE ACCOUNT */
+
+
+.auth-link{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:14px;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+
+.auth-left{
+
+    display:none;
+
+}
+
+
+.auth-right{
+
+    width:100%;
+
+}
+
+
+}
